@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/carro.gd" type="Script" id=1]
+[ext_resource path="res://images/carro.png" type="Texture" id=2]
+[ext_resource path="res://images/escudo.png" type="Texture" id=3]
+[ext_resource path="res://images/rayo_comienzo.png" type="Texture" id=4]
+[ext_resource path="res://images/tuerca.png" type="Texture" id=5]
+[ext_resource path="res://audio/choque.wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.9636, 67.4162 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.724324, 1 )
+colors = PoolColorArray( 0.785031, 0.785031, 0.785031, 1, 0.940738, 0.940738, 0.940738, 1, 1, 1, 1, 1 )
+
+[node name="carro" type="KinematicBody2D" groups=[
+"Carro",
+]]
+position = Vector2( -36.7217, -155.163 )
+scale = Vector2( 1.6207, 1.633 )
+script = ExtResource( 1 )
+velocidad = 700
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0377108, -56.3609 )
+scale = Vector2( 0.299378, 0.265575 )
+texture = ExtResource( 2 )
+
+[node name="escudo" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.19655, -58.226 )
+scale = Vector2( 0.696853, 0.755404 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.188717, -56.9326 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -2.61471, -357.766 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+smoothing_speed = 2.0
+
+[node name="proteccion_timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="humo" type="CPUParticles2D" parent="."]
+position = Vector2( -6.58646, -73.3971 )
+amount = 400
+texture = ExtResource( 4 )
+direction = Vector2( 0, 0 )
+spread = 180.0
+initial_velocity = 72.73
+initial_velocity_random = 0.99
+orbit_velocity_random = 0.84
+linear_accel = -41.82
+scale_amount = 0.5
+color_ramp = SubResource( 2 )
+hue_variation = -1.0
+
+[node name="tuercas" type="CPUParticles2D" parent="."]
+position = Vector2( -2.72545, -42.6922 )
+scale = Vector2( 0.5, 0.5 )
+amount = 10
+texture = ExtResource( 5 )
+direction = Vector2( 0, 0 )
+spread = 180.0
+initial_velocity = 127.28
+angular_velocity = -91.64
+
+[node name="choquecito" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="timeout" from="proteccion_timer" to="." method="_on_proteccion_timer_timeout"]

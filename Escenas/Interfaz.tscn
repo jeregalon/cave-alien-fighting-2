@@ -1,0 +1,241 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://fuentes/28 Days Later.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Interfaz.gd" type="Script" id=2]
+[ext_resource path="res://images/tutorial.png" type="Texture" id=3]
+[ext_resource path="res://fuentes/Take cover.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://images/herram.png" type="Texture" id=6]
+[ext_resource path="res://images/gas.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 100
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.901961, 0.282353, 0.117647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="DynamicFont" id=15]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.341176, 0.109804, 0.109804, 1 )
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://fuentes/Take cover.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+size = 80
+font_data = SubResource( 17 )
+
+[sub_resource type="DynamicFontData" id=19]
+font_path = "res://fuentes/Take cover.ttf"
+
+[sub_resource type="DynamicFont" id=20]
+size = 50
+font_data = SubResource( 19 )
+
+[sub_resource type="DynamicFontData" id=21]
+font_path = "res://fuentes/Take cover.ttf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 40
+font_data = SubResource( 21 )
+
+[node name="Interfaz" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Mensaje" type="Label" parent="."]
+margin_left = 201.202
+margin_top = 131.29
+margin_right = 753.202
+margin_bottom = 318.29
+custom_fonts/font = SubResource( 1 )
+text = "HAS MUERTO
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar" type="Button" parent="."]
+margin_left = 233.152
+margin_top = 273.291
+margin_right = 735.151
+margin_bottom = 390.291
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color_hover = Color( 0.415686, 0.0941176, 0.0196078, 1 )
+custom_colors/font_color_pressed = Color( 0.415686, 0.0941176, 0.0196078, 1 )
+text = "REINTENTAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarraGas" type="ProgressBar" parent="." groups=[
+"Barra_gas_carro",
+]]
+margin_left = 70.0
+margin_top = 50.0
+margin_right = 279.0
+margin_bottom = 75.0
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gas" type="Sprite" parent="BarraGas"]
+position = Vector2( 1.82985, 4.03134 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="BarraVida" type="ProgressBar" parent="." groups=[
+"Barra_vida_carro",
+]]
+margin_left = 70.0
+margin_top = 105.0
+margin_right = 279.0
+margin_bottom = 131.0
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="herram" type="Sprite" parent="BarraVida"]
+position = Vector2( -5.51176, 14.3451 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="tutorial" type="TextureRect" parent="."]
+visible = false
+margin_right = 1066.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Siguiente" type="Button" parent="."]
+visible = false
+margin_left = 836.872
+margin_top = 514.573
+margin_right = 1006.87
+margin_bottom = 563.573
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "¡VAMOS!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 835.364
+margin_top = 28.2728
+margin_right = 914.364
+margin_bottom = 112.273
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 18 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="best" type="Label" parent="."]
+margin_left = 179.988
+margin_top = 430.831
+margin_right = 650.988
+margin_bottom = 483.831
+custom_fonts/font = SubResource( 20 )
+text = "MEJOR PUNTUACIÓN:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="last" type="Label" parent="."]
+margin_left = 258.768
+margin_top = 501.436
+margin_right = 650.768
+margin_bottom = 544.436
+custom_fonts/font = SubResource( 22 )
+text = "ÚLTIMA PUNTUACIÓN:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bestnum" type="Label" parent="."]
+margin_left = 664.817
+margin_top = 431.382
+margin_right = 692.817
+margin_bottom = 484.382
+custom_fonts/font = SubResource( 20 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lastnum" type="Label" parent="."]
+margin_left = 664.75
+margin_top = 500.75
+margin_right = 694.75
+margin_bottom = 543.75
+custom_fonts/font = SubResource( 22 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/arma.ogg-403ba26b13b444d01fb4438d6f60ce1f.oggstr"
+
+[deps]
+
+source_file="res://audio/arma.ogg"
+dest_files=[ "res://.import/arma.ogg-403ba26b13b444d01fb4438d6f60ce1f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

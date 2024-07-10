@@ -1,0 +1,167 @@
+[gd_resource type="TileSet" load_steps=7 format=2]
+
+[ext_resource path="res://images/tileset.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 68.7501, 13.5833, 75.6945, 26.0833, 81.9445, 35.8056, 76.3889, 46.9167, 64.5834, 51.7778, 44.4445, 51.0833, 38.8889, 56.6389, 21.5278, 56.6389, 17.3612, 49, 15.2778, 32.3333, 25.0001, 17.75, 42.3612, 8.02779 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 81.0132, 47.6024, 130.913, 42.579, 155.695, 53.2957, 181.148, 52.6259, 194.544, 65.0171, 203.251, 100.516, 224.349, 97.8371, 229.038, 130.992, 227.698, 153.43, 217.651, 163.477, 200.572, 162.138, 185.166, 165.821, 145.648, 157.114, 126.894, 161.468, 119.526, 172.184, 97.7581, 173.859, 74.3152, 156.444, 52.8817, 161.803, 42.165, 137.355, 29.4388, 129.987, 32.118, 112.908, 43.5046, 93.1486, 47.5233, 79.0828, 70.9662, 71.0453 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 69.1667, 14.9722, 91.3889, 20.5278, 101.111, 45.5278, 108.75, 55.25, 101.111, 74.6944, 80.2778, 84.4167, 54.5833, 82.3333, 37.9167, 89.2778, 14.3056, 85.1111, 5.2778, 64.9722, 9.44449, 43.4444, 31.6667, 22.6111, 49.7223, 11.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 1027.23, 1.00644, 1021.45, 19.8143, 1045.46, 51.7814, 1050.76, 113.027, 1034.95, 155.81, 1036.88, 168.348, 1052.31, 202.106, 1052.79, 229.353, 1043.15, 257.324, 1039.77, 275.65, 1042.66, 294.457, 1072.56, 317.123, 1084.62, 331.109, 1084.62, 347.083, 1063.4, 372.643, 1064.37, 393.38, 1074.49, 416.045, 1074.98, 430.995, 1067.26, 436.3, 1055.69, 443.534, 1041.22, 469.576, 1061.47, 531.786, 1060.03, 540.708, 1071.6, 582.664, 1074.49, 594.238, 1063.4, 610.152, 1061.47, 623.173, 1056.17, 629.925, 1048.45, 637.158, 1055.69, 644.392, 1080.28, 660.307, 1086.07, 667.962, 1085.1, 708.472, 1077.87, 734.513, 1072.56, 753.321, 1072.56, 765.377, 1060.03, 791.419, 1055.69, 801.064, 1061.47, 817.883, 1067.26, 851.641, 1056.65, 881.058, 1047, 920.12, 1043.15, 933.141, 1043.15, 952.431, 1067.26, 975.88, 1072.08, 987.936, 1069.19, 998.063, 1054.72, 1012.53, 1064.85, 1036.16, 1066.29, 1040.5, 1058.1, 1050.63, 1049.42, 1061.24, 1047.49, 1085.83, 1043.15, 1105.12, 1038.32, 1107.53, 1046.04, 1114.29, 1045.56, 1125.38, 1039.77, 1128.75, 1032.54, 1140.81, 1029.16, 1150.94, 781.283, 1151.42, 778.39, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 112.785, 75.1559, 122.938, 107.725, 127.626, 135.186, 99.8298, 138.87, 65.6702, 138.535, 26.1523, 133.512, 28.8315, 107.725, 48.645, 73.7091 )
+
+[resource]
+0/name = "tileset.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 288, 288 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "tileset.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 608, 16, 96, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 1 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "tileset.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 400, 16, 112, 96 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+4/name = "tileset.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 352, 160, 144, 112 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "tileset.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 352, 128, 144, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "tileset.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 320, 1088, 1152 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 4 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "tileset.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 576, 128, 160, 160 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 5 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+10/name = "tileset.png 10"
+10/texture = ExtResource( 1 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 768, 0, 256, 192 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 2 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0

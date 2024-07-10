@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scripts/Nivel 1.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/Interfaz.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Escenas/carro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenas/base_del_arma.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenas/ametralladora.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/TileMap_lava.gd" type="Script" id=6]
+[ext_resource path="res://scripts/TileMap_zanjas.gd" type="Script" id=7]
+[ext_resource path="res://Tile/lava_tileset.tres" type="TileSet" id=8]
+[ext_resource path="res://Tile/zanjatile.tres" type="TileSet" id=9]
+[ext_resource path="res://Tile/tiles.tres" type="TileSet" id=10]
+[ext_resource path="res://audio/fondo.ogg" type="AudioStream" id=11]
+[ext_resource path="res://audio/sonido_cueva_3.wav" type="AudioStream" id=12]
+[ext_resource path="res://images/fondo cueva.png" type="Texture" id=13]
+[ext_resource path="res://audio/sonido_cueva_4.wav" type="AudioStream" id=14]
+[ext_resource path="res://audio/sonido_cueva_2.wav" type="AudioStream" id=15]
+[ext_resource path="res://audio/sonido_cueva_1.wav" type="AudioStream" id=16]
+[ext_resource path="res://audio/laser.wav" type="AudioStream" id=17]
+
+[node name="Nivel 1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap_lava" type="StaticBody2D" parent="." groups=[
+"Fuego",
+]]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="TileMap_lava"]
+position = Vector2( -100, -150 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -2
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 128 )
+collision_use_parent = true
+format = 1
+
+[node name="TileMap_rocas" type="StaticBody2D" parent="." groups=[
+"Rocas_y_obstaculos",
+]]
+
+[node name="TileMap" type="TileMap" parent="TileMap_rocas"]
+tile_set = ExtResource( 10 )
+collision_use_parent = true
+format = 1
+
+[node name="TileMap_zanjas" type="StaticBody2D" parent="." groups=[
+"Zanja",
+]]
+script = ExtResource( 7 )
+
+[node name="TileMapZL" type="TileMap" parent="TileMap_zanjas"]
+z_index = -1
+tile_set = ExtResource( 9 )
+collision_use_parent = true
+format = 1
+
+[node name="carro" parent="." instance=ExtResource( 3 )]
+position = Vector2( 439.795, 486.19 )
+
+[node name="Interfaz" parent="carro" instance=ExtResource( 2 )]
+
+[node name="base_del_arma2" parent="carro" instance=ExtResource( 4 )]
+position = Vector2( 1.30887, -54.9924 )
+scale = Vector2( 0.218, 0.248 )
+
+[node name="ametralladora2" parent="carro" instance=ExtResource( 5 )]
+position = Vector2( 1.27917, -55.3675 )
+scale = Vector2( 0.62979, 0.583585 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2( 3882, 1991 )
+
+[node name="fondocueva" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 13 )
+
+[node name="posicion_de_inicio" type="Position2D" parent="."]
+position = Vector2( 425, -100 )
+
+[node name="mapa_timer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="inicio_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="cartucho_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="motopulpo_timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="estacion_timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+
+[node name="herramienta_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="escudo_timer" type="Timer" parent="."]
+wait_time = 14.0
+one_shot = true
+
+[node name="lava_timer" type="Timer" parent="."]
+wait_time = 0.07
+
+[node name="lava_escudo_timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="garrapata_timer" type="Timer" parent="."]
+wait_time = 18.0
+one_shot = true
+
+[node name="cueva1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[node name="cueva2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="cueva3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="cueva4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Musica_de_fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="ambiente_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="sonidito" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="lava_timer1" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+[connection signal="choque" from="carro" to="." method="game_over"]
+[connection signal="lava_escudo" from="carro" to="." method="_on_carro_lava_escudo"]
+[connection signal="reiniciar_nivel" from="carro/Interfaz" to="." method="escoger_nivel"]
+[connection signal="timeout" from="mapa_timer" to="." method="_on_mapa_timer_timeout"]
+[connection signal="timeout" from="inicio_timer" to="." method="_on_inicio_timer_timeout"]
+[connection signal="timeout" from="cartucho_timer" to="." method="_on_cartucho_timer_timeout"]
+[connection signal="timeout" from="motopulpo_timer" to="." method="_on_motopulpo_timer_timeout"]
+[connection signal="timeout" from="estacion_timer" to="." method="_on_estacion_timer_timeout"]
+[connection signal="timeout" from="herramienta_timer" to="." method="_on_herramienta_timer_timeout"]
+[connection signal="timeout" from="escudo_timer" to="." method="_on_escudo_timer_timeout"]
+[connection signal="timeout" from="lava_timer" to="." method="_on_lava_timer_timeout"]
+[connection signal="timeout" from="lava_escudo_timer" to="." method="_on_lava_escudo_timer_timeout"]
+[connection signal="timeout" from="garrapata_timer" to="." method="_on_garrapata_timer_timeout"]
+[connection signal="timeout" from="ambiente_timer" to="." method="_on_ambiente_timer_timeout"]
+[connection signal="timeout" from="lava_timer1" to="." method="_on_lava_timer1_timeout"]
